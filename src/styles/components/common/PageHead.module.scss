@@ -1,0 +1,42 @@
+/* =================================
+ * 	PageHead
+ * ------------------------------ */
+@use "variable" as *;
+@use "svg" as *;
+/* stylelint-disable no-descending-specificity */
+/* stylelint-disable keyframes-name-pattern */
+/* stylelint-disable custom-property-pattern */
+// このファイル全体のルールを無効にする
+.containerPageHead {
+    height: 100vh;
+    height: 100dvh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    display: grid;
+    place-content: center;
+    color: #fff;
+    @include sp {
+        height: 30vh;
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: rgba($base-blue, 0.25);
+    }
+    .h2Sidebar {
+        font-size: FZ(42);
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        z-index: 2;
+        text-align: center;
+    }
+    h2 {
+        font-size: FZ(16);
+        text-align: center;
+        letter-spacing: 0.2em;
+        z-index: 2;
+    }
+}
