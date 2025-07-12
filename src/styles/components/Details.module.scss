@@ -1,5 +1,5 @@
 /* =================================
- * 	西川塗装 ディテール
+ * 	堀造園 ディテール
  * ------------------------------ */
 @use "variable" as *;
 @use "svg" as *;
@@ -13,9 +13,10 @@
     font-size: inherit;
     display: flex;
     flex-direction: column;
+    flex: 1;
     h3 {
         position: relative;
-        background-color: #1a77be;
+        background-color: $base-green;
         align-self: flex-start;
         color: #fff;
         text-align: center;
@@ -39,259 +40,216 @@
             clip-path: polygon(0 100%, 50% 0, 100% 100%);
         }
     }
+    .linkContact {
+        background-color: $base-green;
+        color: #fff;
+        display: grid;
+        place-content: center;
+        font-size: FZ(26);
+        letter-spacing: 0.08em;
+        height: 8rem;
+        font-weight: 500;
+    }
+    .linkMore {
+        background-color: $base-green;
+        color: #fff;
+        height: 8rem;
+        display: grid;
+        place-content: center;
+        font-size: inherit;
+        padding-left: 1em;
+        span {
+            position: relative;
+            text-transform: uppercase;
+            font-size: FZ(30);
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            &::before {
+                content: "";
+                position: absolute;
+                top: 53%;
+                translate: 0 -50%;
+                right: calc(100% + 0.3em);
+                width: 1em;
+                @include svg-arrow-blog2("ffffff");
+            }
+        }
+    }
     .itemDetail {
         background-color: #fff;
         font-size: inherit;
-        padding: 4em;
+        padding: 3em;
         display: flex;
         flex-direction: column;
         @include sp {
             padding: 6vw 4vw;
         }
-        .itemLinkMore {
-            background-color: #434343;
-            color: #fff;
-            align-self: center;
-            font-size: inherit;
-            width: 80%;
-            max-width: 21em;
-            display: grid;
-            place-content: center;
-            padding-block: 1em;
-            padding-left: 1.8em;
-            transition: 0.3s ease-out;
-            @include sp {
-                width: 80vw;
-                max-width: unset;
-            }
-            span {
-                position: relative;
-                text-transform: uppercase;
-                font-size: FZ(24);
-                font-weight: 700;
-                letter-spacing: 0.12em;
-                &::before {
-                    content: "";
-                    position: absolute;
-                    top: 50%;
-                    translate: 0 -50%;
-                    right: calc(100% + 0.3em);
-                    width: 1em;
-                    @include svg-arrow-blog2("ffffff");
-                }
-            }
-            @include hover {
-                background-color: rgba(#434343, 0.7);
-            }
-        }
     }
-}
-
-/* =================================
+    /* =================================
  * 	コンセプト
  * ------------------------------ */
-.detailConcept {
-    display: grid;
-    grid-template-columns: 30% 1fr;
-    grid-template-rows: auto 1fr;
-    gap: 0.5em 2em;
-    @include sp {
-        gap: 2vw 0;
-    }
-    .itemImage {
-        position: relative;
-        max-width: 23rem;
-        aspect-ratio: 234/176;
-        grid-row: span 2;
-        @include sp {
-            width: 100%;
-            max-width: unset;
-        }
-    }
-    h4 {
-        position: relative;
-        font-weight: 500;
-        font-size: FZ(20);
-        padding-left: 0.8em;
-        &::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 6px;
-            height: 100%;
-            background-color: #1a77be;
-        }
-    }
-    p {
-        font-size: FZ(14);
-        letter-spacing: 0.08em;
-        line-height: 1.8em;
-        text-align: justify;
-    }
-}
-
-/* =================================
- * 	 サービス
- * ------------------------------ */
-.detailService {
-    gap: 3em 0;
-    ul {
+    .detailConcept {
         display: grid;
-        grid-template-columns: clamp(10rem, 30%, 18rem) 1fr;
-        gap: 4em 1em;
-        font-size: inherit;
+        grid-template-columns: 30% 1fr;
+        grid-template-rows: auto 1fr;
+        gap: 1em 2em;
         @include sp {
-            grid-template-columns: unset;
-            grid-auto-flow: row;
-            gap: 14vw 0;
+            gap: 2vw 0;
         }
-        li {
-            display: grid;
+        .itemImage {
             position: relative;
-            font-size: inherit;
+            max-width: 26rem;
+            aspect-ratio: 234/176;
+            grid-row: span 2;
+            @include sp {
+                width: 100%;
+                max-width: unset;
+            }
+        }
+        h4 {
+            position: relative;
+            font-weight: 500;
+            font-size: FZ(20);
+            padding-left: 0.8em;
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 6px;
+                height: 100%;
+                background-color: $base-green;
+            }
+        }
+        p {
+            font-size: FZ(14);
+            letter-spacing: 0.08em;
+            line-height: 2em;
+            text-align: justify;
+        }
+    }
+    /* =================================
+ * 	ご依頼の流れ
+ * ------------------------------ */
+    .detailFlow {
+        display: flex;
+        flex-direction: column;
+        h4 {
+            position: relative;
+            align-self: center;
+            font-size: FZ(36);
+            font-weight: 600;
+            color: $dark-green;
+            padding-bottom: 0.5em;
+            &::after {
+                content: "";
+                position: absolute;
+                left: 50%;
+                translate: -50%;
+                bottom: 0;
+                width: 3em;
+                height: 1px;
+                background-color: $dark-green;
+            }
+        }
+        ul {
+            position: relative;
+            display: grid;
+            grid-template-columns: auto 1fr;
             grid-template-rows: auto 1fr;
-            grid-template-columns: subgrid;
-            grid-column: span 2;
-            gap: 1em 2em;
-            @include sp {
-                grid-template-columns: unset;
-                grid-template-rows: unset;
-                grid-column: unset;
-            }
-            .itemImage {
-                position: relative;
-                max-width: 18rem;
-                aspect-ratio: 1;
-                grid-row: span 2;
-                @include sp {
-                    grid-row: unset;
-                    max-width: unset;
-                    width: 30vw;
-                    margin-inline: auto;
-                }
-            }
-            h4 {
-                font-size: FZ(24);
-                font-weight: 700;
-                border-bottom: 2px solid $base-blue;
-                padding-bottom: 0.2em;
-                &::before {
-                    content: "●";
-                    margin-right: 0.2em;
-                }
-            }
-            p {
-                font-size: FZ(14);
-                text-align: justify;
-                line-height: 1.6em;
-            }
-        }
-    }
-    .notice {
-        align-self: center;
-        font-size: FZ(16);
-    }
-}
-
-/* =================================
- * 	 施工実績
- * ------------------------------ */
-.detailWorks {
-    gap: 3em 0;
-    ul {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 5em 1em;
-        font-size: inherit;
-        @include sp {
-            grid-template-columns: unset;
-            grid-auto-flow: row;
-            gap: 10vw 0;
-        }
-        li {
-            display: grid;
-            position: relative;
             font-size: inherit;
-            grid-template-columns: subgrid;
-            grid-column: span 2;
-            gap: 0.5em 2em;
-            @include sp {
-                display: flex;
-                flex-direction: column;
-            }
-            h4 {
+            margin-top: 2em;
+            gap: 5em 0;
+            counter-reset: number 0;
+            li {
                 position: relative;
-                padding-left: 0.8em;
-                grid-column: span 2;
-                font-size: FZ(20);
-                font-weight: 500;
-                letter-spacing: 0.04em;
-                @include sp {
-                    font-size: FZ(18);
-                }
-                &::before {
-                    content: "";
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    width: 6px;
-                    height: 100%;
-                    background-color: #1a77be;
-                }
-            }
-            .itemImage {
-                position: relative;
-                @include sp {
-                    width: 100%;
-                }
-            }
-        }
-    }
-}
-
-/* =================================
- * 	 施工内容
- * ------------------------------ */
-.detailServiceDetails {
-    ul {
-        position: relative;
-        display: grid;
-        font-size: inherit;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 3em 2em;
-        @include sp {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 6vw 2vw;
-        }
-        li {
-            position: relative;
-            font-size: inherit;
-            figure {
                 font-size: inherit;
-                position: relative;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 0.3em 0;
-                img {
-                    aspect-ratio: 1.5;
-                    object-fit: cover;
+                grid-column: span 2;
+                grid-row: span 2;
+                display: grid;
+                grid-template-columns: subgrid;
+                grid-template-rows: subgrid;
+                border: 2px solid $dark-green;
+                gap: 0.5em 2em;
+                &:not(:last-of-type) {
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        left: 50%;
+                        translate: -50%;
+                        top: calc(100% + 1.6em);
+                        width: 1.6em;
+                        aspect-ratio: 1;
+                        rotate: -45deg;
+                        border: {
+                            left: 5px solid $dark-green;
+                            bottom: 5px solid $dark-green;
+                        }
+                    }
                 }
-                figcaption {
-                    font-size: FZ(16);
-                    letter-spacing: 0.04em;
-                    font-weight: 300;
+                .itemNumber {
+                    position: relative;
+                    font-size: inherit;
+                    grid-row: span 2;
+                    aspect-ratio: 1.2;
+                    background-color: $dark-green;
+                    font-size: inherit;
+                    &::before {
+                        content: "step";
+                        position: absolute;
+                        color: #fff;
+                        text-transform: uppercase;
+                        left: 50%;
+                        top: 0.7em;
+                        translate: -50%;
+                        font-size: FZ(20);
+                    }
+                    &::after {
+                        content: counter(number);
+                        counter-increment: number 1;
+                        position: absolute;
+                        color: #fff;
+                        text-transform: uppercase;
+                        left: 50%;
+                        translate: -50%;
+                        top: 1.2em;
+                        font-size: FZ(36);
+                    }
+                }
+                h5 {
+                    display: inline-block;
+                    font-size: FZ(26);
+                    font-weight: 700;
+                    color: $dark-green;
+                    align-self: end;
+                    line-height: 1em;
+                    display: inline-block;
+                    padding-top: 0.5em;
+                }
+                p {
+                    font-size: FZ(20);
+                    letter-spacing: 0.08em;
+                    align-self: start;
+                    display: flex;
+                    margin-bottom: 0.8em;
+                    em {
+                        font-weight: 700;
+                        margin-left: 0.5em;
+                    }
                 }
             }
         }
+        .notice {
+            font-size: FZ(18);
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-align: center;
+            margin-top: 2em;
+        }
     }
-}
-
-/* =================================
+    /* =================================
  * 	 お仕事Q&A
  * ------------------------------ */
-.wrapDetails {
     .detailQuestions {
         .listQuestions {
             position: relative;
@@ -325,13 +283,41 @@
                         font-size: FZ(12);
                     }
                     &.open {
-                        background-color: $base-blue;
+                        background-color: $base-green;
+                        p {
+                            &::before {
+                                @include svg-arrow-blog("fff");
+                                rotate: 90deg;
+                            }
+                        }
                     }
                     &.closed {
-                        background-color: $base-blue;
+                        background-color: #fff;
+                        color: $base-black;
                     }
                     @include hover {
-                        background-color: $base-blue;
+                        background-color: $base-green;
+                        color: #fff;
+                        p {
+                            &::before {
+                                @include svg-arrow-blog("fff");
+                            }
+                        }
+                    }
+                    p {
+                        font-size: inherit;
+                        position: relative;
+                        padding-left: 1.6em;
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            left: 0;
+                            top: 55%;
+                            translate: 0 -50%;
+                            width: 1.2em;
+                            @include svg-arrow-blog("000");
+                            transition: 0.3s ease-out;
+                        }
                     }
                 }
                 .itemAnswer {
@@ -355,12 +341,213 @@
             }
         }
     }
-}
 
-/* =================================
+    /* =================================
+ * 	 施工実績
+ * ------------------------------ */
+    .DetailPortfolio {
+        gap: 3em 0;
+        ul {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 5em 1em;
+            font-size: inherit;
+            @include sp {
+                grid-template-columns: unset;
+                grid-auto-flow: row;
+                gap: 10vw 0;
+            }
+            li {
+                display: grid;
+                position: relative;
+                font-size: inherit;
+                grid-template-columns: subgrid;
+                grid-column: span 2;
+                gap: 0.5em 2em;
+                @include sp {
+                    display: flex;
+                    flex-direction: column;
+                }
+                h4 {
+                    position: relative;
+                    padding-left: 0.8em;
+                    grid-column: span 2;
+                    font-size: FZ(20);
+                    font-weight: 500;
+                    letter-spacing: 0.04em;
+                    @include sp {
+                        font-size: FZ(18);
+                    }
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 6px;
+                        height: 100%;
+                        background-color: $base-green;
+                    }
+                }
+                .itemImage {
+                    position: relative;
+                    font-size: inherit;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 0.8em 0;
+                    @include sp {
+                        width: 100%;
+                    }
+                    figcaption {
+                        font-size: FZ(22);
+                        text-transform: capitalize;
+                        font-weight: 600;
+                        letter-spacing: 0.04em;
+                    }
+                }
+            }
+        }
+    }
+    /* =================================
+ * 	 サービス(TOPページ)
+ * ------------------------------ */
+    .detailTopService {
+        gap: 3em 0;
+        ul {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto auto 1fr;
+            gap: 0 3em;
+            font-size: inherit;
+            li {
+                display: grid;
+                position: relative;
+                font-size: inherit;
+                grid-template-columns: subgrid;
+                grid-template-rows: subgrid;
+                grid-row: span 3;
+                gap: 1em 0;
+                @include sp {
+                    grid-template-columns: unset;
+                    grid-template-rows: unset;
+                    grid-column: unset;
+                }
+                .itemImage {
+                    position: relative;
+                    width: 100%;
+                    img {
+                        aspect-ratio: 1.33;
+                        object-fit: cover;
+                    }
+                }
+                h4 {
+                    font-size: FZ(22);
+                    font-weight: 700;
+                    text-align: center;
+                    grid-column: span 2;
+                }
+                p {
+                    font-size: FZ(14);
+                    text-align: justify;
+                    line-height: 2em;
+                    font-kerning: 0.08em;
+                    text-align: justify;
+                }
+            }
+        }
+    }
+    /* =================================
+ * 	 サービス
+ * ------------------------------ */
+    .detailService {
+        gap: 3em 0;
+        ul {
+            display: grid;
+            grid-template-columns: clamp(10rem, 35%, 25rem) 1fr;
+            gap: 8em 1em;
+            font-size: inherit;
+
+            li {
+                display: grid;
+                position: relative;
+                font-size: inherit;
+                grid-template-rows: auto 1fr;
+                grid-template-columns: subgrid;
+                grid-column: span 2;
+                gap: 3em 2em;
+                @include sp {
+                    grid-template-columns: unset;
+                    grid-template-rows: unset;
+                    grid-column: unset;
+                }
+                .itemImage {
+                    position: relative;
+                    img {
+                        aspect-ratio: 1.33;
+                        object-fit: cover;
+                    }
+                }
+                h4 {
+                    font-size: FZ(30);
+                    color: $dark-green;
+                    font-weight: 700;
+                    text-align: center;
+                    grid-column: span 2;
+                }
+                p {
+                    font-size: FZ(14);
+                    text-align: justify;
+                    line-height: 2em;
+                    font-kerning: 0.08em;
+                    text-align: justify;
+                }
+            }
+        }
+        .announce {
+            align-self: center;
+            font-size: FZ(22);
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            margin-top: 2em;
+        }
+    }
+    /* =================================
+ * 	代表者挨拶
+ * ------------------------------ */
+    .detailGreeting {
+        display: flex;
+        gap: 0 2em;
+        flex-direction: row;
+        @include sp {
+            gap: 2vw 0;
+        }
+        .itemImage {
+            position: relative;
+            max-width: 26rem;
+            aspect-ratio: 1/1.14;
+            font-size: inherit;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1em 0;
+            img {
+                object-fit: cover;
+            }
+            figcaption {
+                font-size: FZ(14);
+            }
+        }
+        p {
+            font-size: FZ(14);
+            letter-spacing: 0.08em;
+            line-height: 2em;
+            text-align: justify;
+            padding-top: 1em;
+        }
+    }
+    /* =================================
  * 	 会社概要
  * ------------------------------ */
-.wrapDetails {
     .detailCompany {
         display: grid;
         grid-template-columns: auto 1fr;
@@ -403,6 +590,46 @@
                     display: flex;
                     align-items: center;
                     gap: 0 1em;
+                }
+            }
+        }
+    }
+    /* =================================
+ * 	お知らせ一覧
+ * ------------------------------ */
+    .detailNewsList {
+        flex: 1;
+        ul {
+            position: relative;
+            font-size: inherit;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            li {
+                position: relative;
+                font-size: inherit;
+                grid-column: span 2;
+                display: grid;
+                grid-template-columns: subgrid;
+                align-items: center;
+                gap: 0 3em;
+                border-bottom: 2px dotted #cccccc;
+                padding-block: 1em;
+                a {
+                    position: absolute;
+                    inset: 0;
+                    z-index: +1;
+                }
+                .date {
+                    font-size: FZ(14);
+                    font-weight: 600;
+                    color: #555;
+                }
+                h4 {
+                    font-size: inherit;
+                    span {
+                        font-size: FZ(16);
+                        border-bottom: 1px dotted #000000;
+                    }
                 }
             }
         }
