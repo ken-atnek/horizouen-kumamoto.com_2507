@@ -85,6 +85,7 @@
             padding: 6vw 4vw;
         }
     }
+
     /* =================================
  * 	コンセプト
  * ------------------------------ */
@@ -128,6 +129,7 @@
             text-align: justify;
         }
     }
+
     /* =================================
  * 	ご依頼の流れ
  * ------------------------------ */
@@ -189,7 +191,6 @@
                 }
                 .itemNumber {
                     position: relative;
-                    font-size: inherit;
                     grid-row: span 2;
                     aspect-ratio: 1.2;
                     background-color: $dark-green;
@@ -217,7 +218,6 @@
                     }
                 }
                 h5 {
-                    display: inline-block;
                     font-size: FZ(26);
                     font-weight: 700;
                     color: $dark-green;
@@ -247,6 +247,7 @@
             margin-top: 2em;
         }
     }
+
     /* =================================
  * 	 お仕事Q&A
  * ------------------------------ */
@@ -408,6 +409,7 @@
             }
         }
     }
+
     /* =================================
  * 	 サービス(TOPページ)
  * ------------------------------ */
@@ -448,7 +450,6 @@
                 }
                 p {
                     font-size: FZ(14);
-                    text-align: justify;
                     line-height: 2em;
                     font-kerning: 0.08em;
                     text-align: justify;
@@ -456,6 +457,7 @@
             }
         }
     }
+
     /* =================================
  * 	 サービス
  * ------------------------------ */
@@ -466,7 +468,6 @@
             grid-template-columns: clamp(10rem, 35%, 25rem) 1fr;
             gap: 8em 1em;
             font-size: inherit;
-
             li {
                 display: grid;
                 position: relative;
@@ -496,7 +497,6 @@
                 }
                 p {
                     font-size: FZ(14);
-                    text-align: justify;
                     line-height: 2em;
                     font-kerning: 0.08em;
                     text-align: justify;
@@ -511,6 +511,7 @@
             margin-top: 2em;
         }
     }
+
     /* =================================
  * 	代表者挨拶
  * ------------------------------ */
@@ -545,6 +546,7 @@
             padding-top: 1em;
         }
     }
+
     /* =================================
  * 	 会社概要
  * ------------------------------ */
@@ -594,6 +596,7 @@
             }
         }
     }
+
     /* =================================
  * 	お知らせ一覧
  * ------------------------------ */
@@ -612,7 +615,7 @@
                 grid-template-columns: subgrid;
                 align-items: center;
                 gap: 0 3em;
-                border-bottom: 2px dotted #cccccc;
+                border-bottom: 2px dotted #ccc;
                 padding-block: 1em;
                 a {
                     position: absolute;
@@ -628,7 +631,7 @@
                     font-size: inherit;
                     span {
                         font-size: FZ(16);
-                        border-bottom: 1px dotted #000000;
+                        border-bottom: 1px dotted #000;
                     }
                 }
             }
