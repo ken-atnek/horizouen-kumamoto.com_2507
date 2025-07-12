@@ -49,6 +49,16 @@
         letter-spacing: 0.08em;
         height: 8rem;
         font-weight: 500;
+        @include sp {
+            height: 18vw;
+            width: 80vw;
+            height: 15vw;
+            font-size: FZ(20);
+            margin-inline: auto;
+            margin-top: 6vw;
+            background: linear-gradient(to bottom, #0dae1e 0%, #086712 100%);
+            border-radius: 2vw;
+        }
     }
     .linkMore {
         background-color: $base-green;
@@ -58,12 +68,18 @@
         place-content: center;
         font-size: inherit;
         padding-left: 1em;
+        @include sp {
+            height: 18vw;
+        }
         span {
             position: relative;
             text-transform: uppercase;
             font-size: FZ(30);
             font-weight: 600;
             letter-spacing: 0.12em;
+            @include sp {
+                font-size: FZ(24);
+            }
             &::before {
                 content: "";
                 position: absolute;
@@ -95,7 +111,9 @@
         grid-template-rows: auto 1fr;
         gap: 1em 2em;
         @include sp {
-            gap: 2vw 0;
+            gap: 4vw 0;
+            display: flex;
+            flex-direction: column;
         }
         .itemImage {
             position: relative;
@@ -156,23 +174,27 @@
         }
         ul {
             position: relative;
-            display: grid;
-            grid-template-columns: auto 1fr;
-            grid-template-rows: auto 1fr;
+            display: flex;
+            flex-direction: column;
             font-size: inherit;
             margin-top: 2em;
             gap: 5em 0;
             counter-reset: number 0;
+            @include sp {
+                gap: 14vw;
+            }
             li {
                 position: relative;
                 font-size: inherit;
-                grid-column: span 2;
-                grid-row: span 2;
                 display: grid;
-                grid-template-columns: subgrid;
-                grid-template-rows: subgrid;
+                grid-template-columns: 7em 1fr;
+                grid-template-rows: auto auto;
                 border: 2px solid $dark-green;
                 gap: 0.5em 2em;
+                @include sp {
+                    gap: 1vw 2vw;
+                    grid-template-columns: 18vw 1fr;
+                }
                 &:not(:last-of-type) {
                     &::after {
                         content: "";
@@ -187,6 +209,9 @@
                             left: 5px solid $dark-green;
                             bottom: 5px solid $dark-green;
                         }
+                        @include sp {
+                            top: calc(100% + 1em);
+                        }
                     }
                 }
                 .itemNumber {
@@ -195,6 +220,9 @@
                     aspect-ratio: 1.2;
                     background-color: $dark-green;
                     font-size: inherit;
+                    @include sp {
+                        aspect-ratio: 0.9;
+                    }
                     &::before {
                         content: "step";
                         position: absolute;
@@ -225,6 +253,10 @@
                     line-height: 1em;
                     display: inline-block;
                     padding-top: 0.5em;
+                    @include sp {
+                        font-size: FZ(20);
+                        padding-top: unset;
+                    }
                 }
                 p {
                     font-size: FZ(20);
@@ -232,6 +264,12 @@
                     align-self: start;
                     display: flex;
                     margin-bottom: 0.8em;
+                    @include sp {
+                        font-size: FZ(16);
+                        margin-bottom: 0.5em;
+                        display: flex;
+                        flex-direction: column;
+                    }
                     em {
                         font-weight: 700;
                         margin-left: 0.5em;
@@ -245,6 +283,9 @@
             letter-spacing: 0.08em;
             text-align: center;
             margin-top: 2em;
+            @include sp {
+                font-size: FZ(16);
+            }
         }
     }
 
@@ -338,6 +379,10 @@
                             padding: 4vw;
                         }
                     }
+                    &.open {
+                        opacity: 1;
+                        max-height: 1000px;
+                    }
                 }
             }
         }
@@ -356,7 +401,7 @@
             @include sp {
                 grid-template-columns: unset;
                 grid-auto-flow: row;
-                gap: 10vw 0;
+                gap: 14vw 0;
             }
             li {
                 display: grid;
@@ -398,6 +443,9 @@
                     gap: 0.8em 0;
                     @include sp {
                         width: 100%;
+                        &:nth-of-type(2) {
+                            margin-top: 6vw;
+                        }
                     }
                     figcaption {
                         font-size: FZ(22);
@@ -421,6 +469,12 @@
             grid-template-rows: auto auto 1fr;
             gap: 0 3em;
             font-size: inherit;
+            @include sp {
+                display: flex;
+                flex-direction: column;
+                gap: 14vw 0;
+                padding-block: 8vw;
+            }
             li {
                 display: grid;
                 position: relative;
@@ -430,14 +484,14 @@
                 grid-row: span 3;
                 gap: 1em 0;
                 @include sp {
-                    grid-template-columns: unset;
-                    grid-template-rows: unset;
-                    grid-column: unset;
+                    display: flex;
+                    flex-direction: column;
                 }
                 .itemImage {
                     position: relative;
                     width: 100%;
                     img {
+                        width: 100%;
                         aspect-ratio: 1.33;
                         object-fit: cover;
                     }
@@ -468,6 +522,11 @@
             grid-template-columns: clamp(10rem, 35%, 25rem) 1fr;
             gap: 8em 1em;
             font-size: inherit;
+            @include sp {
+                display: flex;
+                flex-direction: column;
+                gap: 14vw 0;
+            }
             li {
                 display: grid;
                 position: relative;
@@ -477,15 +536,16 @@
                 grid-column: span 2;
                 gap: 3em 2em;
                 @include sp {
-                    grid-template-columns: unset;
-                    grid-template-rows: unset;
-                    grid-column: unset;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 4vw 0;
                 }
                 .itemImage {
                     position: relative;
                     img {
                         aspect-ratio: 1.33;
                         object-fit: cover;
+                        width: 100%;
                     }
                 }
                 h4 {
@@ -494,6 +554,9 @@
                     font-weight: 700;
                     text-align: center;
                     grid-column: span 2;
+                    @include sp {
+                        font-size: FZ(26);
+                    }
                 }
                 p {
                     font-size: FZ(14);
@@ -509,6 +572,11 @@
             font-weight: 600;
             letter-spacing: 0.04em;
             margin-top: 2em;
+            @include sp {
+                font-size: FZ(16);
+                text-align: center;
+                margin-top: 4vw;
+            }
         }
     }
 
@@ -521,6 +589,9 @@
         flex-direction: row;
         @include sp {
             gap: 2vw 0;
+            flex-direction: column;
+            align-items: center;
+            gap: 2vw 0;
         }
         .itemImage {
             position: relative;
@@ -531,7 +602,13 @@
             flex-direction: column;
             align-items: center;
             gap: 1em 0;
+            @include sp {
+                width: 70vw;
+                max-width: unset;
+                gap: 4vw 0;
+            }
             img {
+                width: 100%;
                 object-fit: cover;
             }
             figcaption {
@@ -544,6 +621,9 @@
             line-height: 2em;
             text-align: justify;
             padding-top: 1em;
+            @include sp {
+                margin-top: unset;
+            }
         }
     }
 

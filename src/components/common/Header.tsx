@@ -157,6 +157,13 @@ const Header = () => {
                 />
               </ExternalLink>
             </li>
+            <li className={styles.wrapTel}>
+              <ExternalLink
+                href="tel:09020837643"
+                aria-label="090-2083-7643に電話"
+                className={styles.itemTel}
+              ></ExternalLink>
+            </li>
           </ul>
         </div>
       </article>

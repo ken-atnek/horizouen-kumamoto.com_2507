@@ -72,6 +72,7 @@ const DetailQuestions = () => {
               key={index}
               title={item.title}
               answer={item.answer}
+              initiallyOpen={index === 0} // 最初の項目だけ true
             />
           ))}
         </ul>
@@ -86,15 +87,34 @@ const DetailQuestions = () => {
 export default DetailQuestions;
 
 // 子コンポーネント
+import { useEffect } from 'react';
 const QuestionsItem = ({
   title,
   answer,
+  initiallyOpen = false,
 }: {
   title: string;
   answer: React.ReactNode;
+  initiallyOpen?: boolean;
 }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(initiallyOpen);
+  const [maxHeight, setMaxHeight] = useState('0px');
   const contentRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (isOpen && contentRef.current) {
+      setMaxHeight(`${contentRef.current.scrollHeight}px`);
+    } else {
+      setMaxHeight('0px');
+    }
+  }, [isOpen]);
+
+  useEffect(() => {
+    if (initiallyOpen && contentRef.current) {
+      setMaxHeight(`${contentRef.current.scrollHeight}px`);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <li>
@@ -107,9 +127,9 @@ const QuestionsItem = ({
       </button>
       <div
         ref={contentRef}
-        className={styles.itemAnswer}
+        className={`${styles.itemAnswer} ${isOpen ? styles.open : ''}`}
         style={{
-          maxHeight: isOpen ? `${contentRef.current?.scrollHeight}px` : '0px',
+          maxHeight,
           opacity: isOpen ? 1 : 0,
           transition: 'max-height 0.4s ease, opacity 0.4s ease',
           overflow: 'hidden',

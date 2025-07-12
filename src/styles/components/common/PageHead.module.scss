@@ -17,7 +17,7 @@
     place-content: center;
     color: #fff;
     @include sp {
-        height: 30vh;
+        height: 50vw;
     }
     h2 {
         font-size: FZ(42);
@@ -25,5 +25,9 @@
         font-weight: 700;
         letter-spacing: 0.08em;
         z-index: 2;
+        @include sp {
+            font-size: FZ(30);
+            padding-top: 12vw;
+        }
     }
 }

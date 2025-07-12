@@ -10,8 +10,15 @@
         align-items: center;
         gap: 2em 0;
         padding: 5em 0 3em;
+        @include sp {
+            gap: 4vw 0;
+            padding: 6vw 0;
+        }
         .itemLogo {
             max-width: 24rem;
+            @include sp {
+                max-width: 30vw;
+            }
         }
         address {
             font-size: FZ(14);
@@ -44,6 +51,9 @@
             grid-template-columns: repeat(2, 2.4em);
             gap: 0 1.4em;
             margin-top: 3em;
+            @include sp {
+                margin-top: 4vw;
+            }
             li {
                 position: relative;
                 width: 100%;
@@ -73,12 +83,18 @@
         justify-content: center;
         gap: 0 2em;
         background-color: #d9d9d9;
+        @include sp {
+            flex-direction: column;
+            align-items: center;
+            padding-block: 4vw;
+        }
         .itemLink {
             font-size: FZ(14);
             letter-spacing: 0.08em;
             padding-block: 2em;
             @include sp {
                 font-size: FZ(16);
+                padding-block: 2vw;
             }
         }
     }

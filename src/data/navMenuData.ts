@@ -11,6 +11,7 @@ export type NavMenuItem = {
 };
 
 export const navMenu: NavMenuItem[] = [
+  { href: '/', label: 'TOP' },
   { href: '/service/', label: 'サービス一覧' },
   { href: '/portfolio/', label: '施工実績' },
   { href: '/news/', label: 'お知らせ' },
