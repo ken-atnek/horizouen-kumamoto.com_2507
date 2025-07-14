@@ -78,7 +78,7 @@ const DetailPortfolio = () => {
         </ul>
       </div>
       {pathname === '/' && (
-        <Link href="/contact/" className={styles.linkMore}>
+        <Link href="/portfolio/" className={styles.linkMore}>
           <span>more</span>
         </Link>
       )}

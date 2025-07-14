@@ -21,7 +21,7 @@ const Footer = () => {
         </div>
 
         <address>
-          <span>〒861-11042</span>
+          <span>〒861-1104</span>
           熊本県合志市御代志1868-3
         </address>
         <ExternalLink
@@ -48,7 +48,7 @@ const Footer = () => {
           </li>
           <li>
             <ExternalLink
-              href="https://page.line.me/068impcw?oat_content=url&openQrModal=true"
+              href="https://www.instagram.com/hori_zoen.kumamoto/"
               className={styles.itemSns}
             >
               <Image

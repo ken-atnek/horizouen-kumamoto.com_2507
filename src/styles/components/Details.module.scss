@@ -50,7 +50,6 @@
         height: 8rem;
         font-weight: 500;
         @include sp {
-            height: 18vw;
             width: 80vw;
             height: 15vw;
             font-size: FZ(20);
@@ -588,7 +587,6 @@
         gap: 0 2em;
         flex-direction: row;
         @include sp {
-            gap: 2vw 0;
             flex-direction: column;
             align-items: center;
             gap: 2vw 0;

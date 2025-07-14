@@ -28,7 +28,7 @@ const LeftBan = () => {
       </div>
       <div>
         <ExternalLink
-          href="https://page.line.me/068impcw?oat_content=url&openQrModal=true"
+          href="https://www.instagram.com/hori_zoen.kumamoto/"
           className={styles.itemSns}
         >
           <Image

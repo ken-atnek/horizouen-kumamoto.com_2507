@@ -9,6 +9,7 @@
 import React, { useState, useRef } from 'react';
 import Modal from '@/components/Modal';
 import styles from '@/styles/components/DetailForm.module.scss';
+import ExternalLink from '@/components/common/ExternalLink';
 const DetailForm = () => {
   const [Name, setName] = useState('');
   const [NameKana, setNameKana] = useState('');
@@ -52,7 +53,8 @@ const DetailForm = () => {
   };
 
   // **修正ボタンの処理（入力画面に戻る）**
-  const handleEdit = () => {
+  const handleEdit = (e: React.MouseEvent) => {
+    e.preventDefault();
     setIsConfirming(false);
   };
 
@@ -438,8 +440,22 @@ const DetailForm = () => {
                     />
                   </dd>
                 </dl>
+
                 <div className={styles.box_btn}>
                   <button type="submit">確 認</button>
+                </div>
+                <div className={styles.wrapNotice}>
+                  <p>
+                    その他、画像等の送付を希望される場合は、別途下記メールアドレスに添付してお問い合わせください。
+                  </p>
+
+                  <ExternalLink
+                    href="mailto:horizouen-kumamoto@sge.bbiq.jp"
+                    aria-label="horizouen-kumamoto@sge.bbiq.jpにメール"
+                    className={styles.itemMail}
+                  >
+                    horizouen-kumamoto@sge.bbiq.jp
+                  </ExternalLink>
                 </div>
               </div>
             )}
