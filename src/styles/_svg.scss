@@ -69,3 +69,12 @@
     background-size: contain;
     background-position: center center;
 }
+
+// 電話アイコン
+@mixin svg-icon-check($color) {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 78" fill="%23#{$color}"><polygon points="0 46.78 9.21 37.56 31.23 59.59 90.79 0 100 9.22 31.21 78 0 46.78"/></svg>');
+    aspect-ratio: 100/78;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+}

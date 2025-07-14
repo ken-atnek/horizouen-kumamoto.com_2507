@@ -44,6 +44,7 @@
     flex-direction: column;
     align-items: center;
     padding-inline: 2em;
+    flex: 1;
     @include sp {
         padding-inline: 0;
     }
@@ -53,6 +54,7 @@
         max-width: $articleMaxWidth;
         padding: 3em 0 8em;
         gap: 0 2em;
+        flex: 1;
         @include sp {
             grid-template-columns: unset;
             grid-auto-flow: row;
@@ -64,9 +66,67 @@
             display: flex;
             flex-direction: column;
             width: 100%;
-            gap: 4em 0;
+            gap: 6em 0;
+            flex: 1;
             @include sp {
                 gap: 12vw 0;
+            }
+        }
+
+        //  ニュース記事詳細
+        .blockNewsDetail {
+            background-color: #fff;
+            font-size: inherit;
+            padding: 3em;
+            display: flex;
+            flex-direction: column;
+            gap: 1em 0;
+            @include sp {
+                gap: 2vw 0;
+                padding: 6vw 4vw;
+            }
+            time {
+                font-size: FZ(20);
+                font-weight: 700;
+                letter-spacing: 0.04em;
+            }
+            h3 {
+                background-color: $base-green;
+                display: flex;
+                justify-content: center;
+                padding-inline: 1em;
+                letter-spacing: 0.08em;
+                line-height: 1.4em;
+                color: #fff;
+                font-size: FZ(24);
+                font-weight: 500;
+                padding-block: 1em;
+                @include sp {
+                    font-size: FZ(20);
+                    padding-block: 4vw;
+                }
+            }
+            .itemDetail {
+                position: relative;
+                font-size: inherit;
+                display: flex;
+                flex-direction: column;
+                gap: 1em 0;
+                p {
+                    font-size: FZ(16);
+                    letter-spacing: 0.08em;
+                    line-height: 2em;
+                }
+                img {
+                    width: 100%;
+                }
+            }
+            .linkList {
+                align-self: center;
+                font-size: FZ(14);
+                border-bottom: 1px dotted #000;
+                letter-spacing: 0.2em;
+                margin-top: 5em;
             }
         }
     }

@@ -1,28 +1,27 @@
 /* =======================================
- * 西川塗装 Layout
+ * 堀造園 Layout
  * URL:src/app/layout.tsx
- * Created: 2025-07-09
- * Last updated: 2025-07-09
+ * Created: 2025-07-11
+ * Last updated: 2025-07-11
  * ======================================= */
 
 import type { Metadata } from 'next';
 import '@/styles/globals.scss';
-import { M_PLUS_1p } from 'next/font/google';
+import { Noto_Sans_JP } from 'next/font/google';
 import Header from '@/components/common/Header';
 import Footer from '@/components/common/Footer';
-const mPlus1p = M_PLUS_1p({
-  weight: ['100', '300', '400', '500', '700'], 
+const notoSans = Noto_Sans_JP({
   subsets: ['latin'],
+  weight: ['100', '300', '400', '500', '700', '900'],
   display: 'swap',
 });
-
 // 実際の本番環境かどうかを判定
 const isRealProduction = process.env.NEXT_PUBLIC_IS_REAL_PROD === 'true';
 
 // 本番のみ metadataBase を設定
 const metadataBase = isRealProduction
   ? new URL(
-      process.env.NEXT_PUBLIC_METADATA_BASE || 'https://nishikawatoso.com/'
+      process.env.NEXT_PUBLIC_METADATA_BASE || 'https://horizouen-kumamoto.com/'
     )
   : undefined;
 
@@ -37,13 +36,13 @@ export const metadata: Metadata = {
           url: '/ogp.jpg',
           width: 1200,
           height: 630,
-          alt: '西川塗装のOGP画像',
+          alt: '堀造園のOGP画像',
         },
       ],
     },
   }),
-  title: ' 西川塗装',
-  description: isRealProduction ? '西川塗装' : undefined,
+  title: ' 堀造園',
+  description: isRealProduction ? '堀造園' : undefined,
   robots: isRealProduction ? 'index, follow' : 'noindex, nofollow',
   icons: {
     icon: [
@@ -69,7 +68,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja" className={`${mPlus1p.className}`}>
+    <html lang="ja" className={`${notoSans.className}`}>
       <head>
         <meta
           name="robots"

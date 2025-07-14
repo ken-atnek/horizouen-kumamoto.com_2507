@@ -1,7 +1,7 @@
 @use "./reset_v2.5" as *;
 @use "./variable" as *;
 body {
-    @include m-plus-1p;
+    @include SunSerif;
     font-feature-settings: "palt";
     font-size: clamp(1.2rem, calc($base-vw * 1vw) + calc($slice * 1px), 1.6rem);
     margin: 0;
@@ -39,33 +39,4 @@ footer {
     position: relative;
     font-size: inherit;
     z-index: 1;
-}
-.wrap-link-contact {
-    display: flex;
-    align-items: center;
-    font-size: inherit;
-    width: 100%;
-    padding-inline: 1em;
-    @include sp {
-        padding-inline: 0;
-    }
-    a {
-        background-color: $base-blue;
-        color: #fff;
-        width: 100%;
-        text-align: center;
-        padding-block: 1.2em;
-        font-size: FZ(26);
-        font-weight: 500;
-        border-radius: 4px;
-        transition: 0.3s ease-out;
-        @include hover {
-            background-color: rgba($base-blue, 0.8);
-        }
-        @include sp {
-            width: 80vw;
-            font-size: FZ(20);
-            margin-inline: auto;
-        }
-    }
 }

@@ -8,8 +8,8 @@
 /* stylelint-disable custom-property-pattern */
 // このファイル全体のルールを無効にする
 .containerPageHead {
-    height: 100vh;
-    height: 100dvh;
+    height: 80vh;
+    height: 80dvh;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -17,26 +17,17 @@
     place-content: center;
     color: #fff;
     @include sp {
-        height: 30vh;
-    }
-    &::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background-color: rgba($base-blue, 0.25);
-    }
-    .h2Sidebar {
-        font-size: FZ(42);
-        text-transform: uppercase;
-        font-weight: 700;
-        letter-spacing: 0.04em;
-        z-index: 2;
-        text-align: center;
+        height: 50vw;
     }
     h2 {
-        font-size: FZ(16);
+        font-size: FZ(42);
         text-align: center;
-        letter-spacing: 0.2em;
+        font-weight: 700;
+        letter-spacing: 0.08em;
         z-index: 2;
+        @include sp {
+            font-size: FZ(30);
+            padding-top: 12vw;
+        }
     }
 }
