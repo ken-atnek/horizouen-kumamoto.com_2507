@@ -80,7 +80,7 @@ const DetailForm = () => {
     }
     try {
       const response = await fetch(
-        'http://demo-horizouen-kumamoto.tuna-pic.co.jp/backend/contact.php',
+        'https://horizouen-kumamoto.com/backend/contact.php',
         {
           method: 'POST',
           body: formData,
