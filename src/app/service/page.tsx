@@ -14,7 +14,7 @@ import bgImage from '@/assets/images/title-service-bg.webp';
 import DetailService from '@/components/DetailService';
 export const generateMetadata = (): Metadata => {
   return {
-    title: 'サービス一覧｜西川塗装',
+    title: 'サービス一覧｜堀造園',
     description:
       '熊本県合志市にある堀造園は、和風・洋風の庭づくり、外構工事、剪定を手がける造園専門店。お客様の思いを形にする丁寧な提案と施工で理想の庭を実現します。。',
   };
