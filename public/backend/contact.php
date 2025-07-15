@@ -4,7 +4,7 @@
 * URL:public/backend/contact.php
 * Referenced in: /page.tsx,
  * Created: 2025-07-12
- * Last updated: 2025-07-12
+ * Last updated: 2025-07-15
 * ======================================= */
 
 
@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 	$to_name = "堀造園";
 	$send_date = date("Y/n/j-H:i", time());
 	$from_name = "堀造園 お問い合わせ";
-	$from_email = "contact@demo-horizouen-kumamoto.tuna-pic.co.jp";  //
+	$from_email = "contact@horizouen-kumamoto.com";  //
 	// **エンコーディング設定**
 	$orgEncoding = mb_internal_encoding();
 	mb_language("uni");
