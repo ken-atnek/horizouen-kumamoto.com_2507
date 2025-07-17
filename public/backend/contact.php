@@ -34,8 +34,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 	}
 
 	// 📩 **メールの設定**
-	$to = "ken.atnek@gmail.com";
-	// $to = "horizouen-kumamoto@sge.bbiq.jp";
+	// $to = "ken.atnek@gmail.com";
+	$to = "horizouen-kumamoto@sge.bbiq.jp";
 	$to_name = "堀造園";
 	$send_date = date("Y/n/j-H:i", time());
 	$from_name = "堀造園 お問い合わせ";
